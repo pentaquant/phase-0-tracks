@@ -11,3 +11,4 @@
 **What is a merge conflict?**
 *A merge conflict is when you have commits in your current branch that are not in the other branch*
 
+*Addition
