@@ -1,0 +1,18 @@
+/*octopus*/
+img:first-child {
+  position:absolute;
+  left: 20px;
+  padding-top: 80px;
+  z-index: -1;
+}
+/*hat*/
+img:nth-child(2) {
+  position: absolute;
+  
+}
+/*glasses*/
+img:nth-child(3) {
+  position: absolute;
+  left: 63px;
+  padding-top: 178px;
+}
