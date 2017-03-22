@@ -1,18 +1,28 @@
-/*octopus*/
-img:first-child {
-  position:absolute;
-  left: 20px;
-  padding-top: 80px;
+
+.center {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
   z-index: -1;
 }
-/*hat*/
-img:nth-child(2) {
-  position: absolute;
-  
+
+.hat {
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 360px;
+  left: 17px;
+
 }
-/*glasses*/
-img:nth-child(3) {
-  position: absolute;
-  left: 63px;
-  padding-top: 178px;
+
+.glasses {
+  position: relative;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 358px;
+  left: 3px;
 }
