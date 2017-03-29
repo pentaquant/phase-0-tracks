@@ -1,0 +1,55 @@
+* {
+  font-family: Helvetica;
+}
+
+body {
+  background-image: url("https://raw.githubusercontent.com/John-Lin/octocat-images/master/img/droctocat.png");
+}
+
+header {
+  background: rgba(255, 0, 0, 0.3);
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-family: arial;
+}
+
+header h1 {
+  font-size: 36px;
+}
+
+footer {
+  background: rgba(255, 0, 0, 0.3);
+  border: 1px solid black;
+  padding: 50px;
+}
+
+/* .column-1 {
+  display: inline-block;
+  width: 45%;
+  background: rgba(0, 0, 255, 0.7);
+  padding: 10px;
+  vertical-align: top;
+  height: 1100px;
+}
+
+.column-2 {
+  display: inline-block;
+  width: 45%;
+  background: rgba(0, 0, 255, 0.7);
+  vertical-align: top;
+  padding: 10px;
+  margin-left: 20px;
+ padding-bottom: 102px;
+  height: 1100px;
+   } */
+   
+.column-1, .column-2 {
+  display: inline-block;
+  width: 45%;
+  background: rgba(0, 0, 255, 0.7);
+  vertical-align: top;
+  padding: 5px;
+ /*  padding-bottom: 102px; */
+  height: 1100px;
+}
