@@ -26,3 +26,4 @@ if age == 0
 else
   puts "The hamster is #{age} years old"
 end 
+
