@@ -1,0 +1,35 @@
+--Elevator Algo
+
+Find desired destination direction
+  if down, select lower button
+  if up, select up button
+Wait until ding
+  if doors closed, wait
+  elsif doors open, enter
+Move to buttons right or left of the entry door
+  select desired floor.
+end
+
+--Shower
+
+Turn on water
+  if water warm, enter tub
+  else wait until water warm
+Step into the shower
+  move to a place where the most water makes contact
+  face away from the shower head
+  rinse for 20 seconds
+Step 1.5 ft away from the showerhead
+  grab shampoo
+  dispense
+  put in hair and lather for 20 seconds
+Step backwards to the first position
+  rinse for 20 seconds
+Step forward
+  grab soap
+  lather body
+Step backward to the first position
+  rinse
+Turn off water
+Grab Towel
+  Dry for 30 seconds
