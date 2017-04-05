@@ -22,9 +22,22 @@ client_info = {
 
 puts client_info
 
-puts "Are there any edits to the information that you would like to make?"
+puts "Are there any edits to the information that you would like to make? If nothing, please type 'none'"
   edits = gets.chomp
-if 
+
+if edits == "none"
+  puts client_info
+elsif edits == ":decor_theme" || ":name"
+  puts "what would you like to change the value to?"  
+  value_edit = gets.chomp.to_s
+  edits << value_edit
+elsif edits == ":age" || ":children"
+  puts "what would you like to change the value to?"  
+  value_edit = gets.chomp.to_i
+  edits << value_edit
+end
+
+puts client_info
 
 
 # suitcase_items = []
