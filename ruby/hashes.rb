@@ -20,24 +20,26 @@ client_info = {
   decor_theme: decor_theme,
 }
 
-puts client_info
+puts "Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor_theme]}"
 
 puts "Are there any edits to the information that you would like to make? If nothing, please type 'none'"
   edits = gets.chomp
 
-if edits == "none"
-  puts client_info
-elsif edits == ":decor_theme" || ":name"
-  puts "what would you like to change the value to?"  
-  value_edit = gets.chomp.to_s
-  edits << value_edit
-elsif edits == ":age" || ":children"
-  puts "what would you like to change the value to?"  
-  value_edit = gets.chomp.to_i
-  edits << value_edit
-end
 
-puts client_info
+
+# if edits == "none"
+#   puts client_info
+# elsif edits == ":decor_theme" || ":name"
+#   puts "what would you like to change the value to?"  
+#   value_edit = gets.chomp
+#   edits << value_edit
+# elsif edits == ":age" || ":children"
+#   puts "what would you like to change the value to?"  
+#   value_edit = gets.chomp.to_i
+#   edits.push(value_edit)
+# end
+
+# puts "Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor_theme]}"
 
 
 # suitcase_items = []
