@@ -26,6 +26,19 @@ puts "Are there any edits to the information that you would like to make? If not
   edits = gets.chomp
 
 
+#ask if all the info is correct
+#until yes or no keep prompting
+#prompt what would you like to change
+#convert input into a :symbol /// the method is to_sym
+#used split and join to update
+#replace spaces with underscores
+#downcase
+#once key, modify the hash
+
+#key = correct_info.split(" ").join("_").to_sym
+
+#client_info[key] = input
+
 
 # if edits == "none"
 #   puts client_info
