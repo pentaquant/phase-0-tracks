@@ -46,3 +46,5 @@ mlb_rpitchers[:seattle][:relief_pitchers][1]
 #adding a third relief pitcher to Baltimore and printing to show the addition
 mlb_rpitchers[:baltimore][:relief_pitchers].push("J. Doe")
 mlb_rpitchers[:baltimore][:relief_pitchers][2]
+
+
