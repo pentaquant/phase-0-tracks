@@ -11,59 +11,31 @@ puts "How many children does the client have?"
 children = gets.chomp.to_i
 
 puts "What is the desired decoration theme?"
-decor_theme = gets.chomp
+decor = gets.chomp
+
+#Define the hash and where the collected information will reside.
 
 client_info = {
   name: name,
   age: age,
   children: children,
-  decor_theme: decor_theme,
+  decor: decor,
 }
-
+#Display current hash to see if there are any discrepancies
 puts "Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor_theme]}"
 
-puts "Are there any edits to the information that you would like to make? If nothing, please type 'none'"
-  edits = gets.chomp
+#Ask if there are any changes the user would like to make and what value he would like to enter
+puts "Are there any keys that you would like to edit? If no edits are necessary please enter 'none' "
+  answer = gets.chomp
+  if answer == "none"
+    puts "Here is your information [Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor]}]" 
+  else
+    answer = answer.to_sym
+    puts "What value would you like to use?"
+    client_info[answer] = gets.chomp
+    puts "Here is your updated information [Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor]}]" 
+  end
 
-
-#ask if all the info is correct
-#until yes or no keep prompting
-#prompt what would you like to change
-#convert input into a :symbol /// the method is to_sym
-#used split and join to update
-#replace spaces with underscores
-#downcase
-#once key, modify the hash
-
-#key = correct_info.split(" ").join("_").to_sym
-
-#client_info[key] = input
-
-
-# if edits == "none"
-#   puts client_info
-# elsif edits == ":decor_theme" || ":name"
-#   puts "what would you like to change the value to?"  
-#   value_edit = gets.chomp
-#   edits << value_edit
-# elsif edits == ":age" || ":children"
-#   puts "what would you like to change the value to?"  
-#   value_edit = gets.chomp.to_i
-#   edits.push(value_edit)
-# end
-
-# puts "Name:#{client_info[:name]} Age:#{client_info[:age]} Number of Children:#{client_info[:children]} Decor Theme:#{client_info[:decor_theme]}"
-
-
-# suitcase_items = []
-
-# puts "welcome to the suitcase assistance"
-
-# loop do
-#   puts "Enter item"
-#   input = gets.chomp
-#   suitcase_items << input
-# end
 
 
 
