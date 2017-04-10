@@ -1,28 +1,36 @@
-#take a spys real full name
-puts "What is your name?"
-  og_name = gets.chomp.to_s
+#Incomplete
 
-#Swap the first and last name
-swap_name = og_name.split(' ').reverse
+def alias_manager
+  vowels = "aeiou"
+  consonants = "bcdfghjklmnpqrstvwxyz"
+  user_data = {}
 
-#for eachx in swap_name .split
-split_name = []
-vowels = "aeiou"
+loop do
+  puts "Enter first and last name. When finished type 'exit'."
+  input = gets.chomp
+  break if input == "exit"
+  lett_arr = input.split(' ').reverse.join(" ").split('')
 
-
-swap_name.each do |letter| 
-split_name << letter.chars
-end
-
-split_name.each do |letter|
-  if |letter| == "a" || "e" || "i" || "o" || "u"
-    
-
-p split_name
+  v = vowels.length
+  i = input.length
   
-#   split_name << letter.split('')
-# p split_name
-
-# split_name. each do |x|
-# end
- 
+  newarray = []
+  
+x = 0
+while x < lett_arr.length
+  if lett_arr[x] == "u"
+    lett_arr[x] == "a"
+    x += 1
+  elsif lett_arr[x] == "z"
+    lett_arr[x] = "b"
+    x += 1
+  elsif vowels.include? lett_arr[x]
+    lett_arr[x] = vowels[(vowels.index[x])+ 1]
+    x += 1
+  elsif consonants.include? name_arr[i]
+    lett_arr[x] = consonants[consonants.index(lett_arr[x]) + 1]
+    x += 1
+  else 
+    x +=1
+  end
+end
