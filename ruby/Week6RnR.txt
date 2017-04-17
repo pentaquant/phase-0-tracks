@@ -1,0 +1,18 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+
+A class is an object within ruby where several instances of that class can be created. Different types of methods and attributes can be used to manipulate their behavior. Classes also allow for states, also known as instance variables. Instance variables allow for the instances within classes to have variables that relate to the states of each separate instance. 
+
+2. What are attributes?
+While, methods are the capabilities of an object, attributes are the specific properties of an object. For example, with a class of snakes attributes could be color, length, or deadliness. 
+
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+Class of cat would have different attributes such as jump height, cat type, eye color, and food preference. 
+
+4. What is the purpose of the initialize method? When does it run?
+The initialize method is used to create default cord for any new instances of the class. The initialize method is run whenever a new instance of the class in question is called upon. 
+
+5. What are modules?
+Modules are a way to compartmentalize pieces of code that are frequently used for easy access. 
+
+6. What are the different ways you can use a module?
+Modules provide users an easy way to reference a piece of code to an object. For example, calculating each individual country's GDP can be made much easier with the use of modules. 
