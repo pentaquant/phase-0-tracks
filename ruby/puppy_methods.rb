@@ -41,7 +41,6 @@ class Swimmer
   def sprint_time(seconds)
     puts "I did the 1400 meters in #{seconds}"
   end
-  
 end
 
 # ---- DRIVER CODE

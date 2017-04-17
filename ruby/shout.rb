@@ -20,6 +20,6 @@ end
 
 teacher = Teacher.new
 teacher.yelling("Put the paste down now")
-
 auctioneer = Auctioneer.new
 auctioneer.yelling("Sold to the lady in the red dress")
+
