@@ -1,36 +1,23 @@
-#Incomplete
+#Swap the first and last name
+  #Seperate both of the items and store them within an array
+  #downcase all letters
+  #Vowels: change vowels to the next value in aeiou
+  #Change consonants to next consonant in the alphabet
 
-def alias_manager
+# Food for thought
+#   When will it be helpful to convert the string to an array to work with it more easily?
+#   How will you figure out whether a letter is a vowell
+#   How will you deal with the fact that some letters are uppercase
+#   How will you handle edge cases
+
+
+def alias_manager(name_in)
   vowels = "aeiou"
   consonants = "bcdfghjklmnpqrstvwxyz"
-  user_data = {}
 
-loop do
-  puts "Enter first and last name. When finished type 'exit'."
-  input = gets.chomp
-  break if input == "exit"
-  lett_arr = input.split(' ').reverse.join(" ").split('')
+  r_name = name_in.downcase.split(' ').reverse.join(' ')
 
-  v = vowels.length
-  i = input.length
-  
-  newarray = []
-  
-x = 0
-while x < lett_arr.length
-  if lett_arr[x] == "u"
-    lett_arr[x] == "a"
-    x += 1
-  elsif lett_arr[x] == "z"
-    lett_arr[x] = "b"
-    x += 1
-  elsif vowels.include? lett_arr[x]
-    lett_arr[x] = vowels[(vowels.index[x])+ 1]
-    x += 1
-  elsif consonants.include? name_arr[i]
-    lett_arr[x] = consonants[consonants.index(lett_arr[x]) + 1]
-    x += 1
-  else 
-    x +=1
-  end
 end
+  
+alias_manager("Peter Mueller")
+#DRIVER CODE________________
