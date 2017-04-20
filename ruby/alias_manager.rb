@@ -28,6 +28,10 @@ def alias_manager(name_in)
       elsif consonants.include? r_name[i]
         r_name[i] = consonants[consonants.index(r_name[i])+1]
         i += 1
+      elsif r_name[i] == "u"
+        r_name[i] = "a"
+      elsif r_name[i] == "z"
+        r_name[i] = "b"
       else 
         i += 1
       end
@@ -35,4 +39,4 @@ def alias_manager(name_in)
   p r_name
 end
   
-alias_manager("Peter Mueller")
+alias_manager("PeterU MuellerZ")
