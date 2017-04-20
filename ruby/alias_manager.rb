@@ -15,9 +15,28 @@ def alias_manager(name_in)
   vowels = "aeiou"
   consonants = "bcdfghjklmnpqrstvwxyz"
 
-  r_name = name_in.downcase.split(' ').reverse.join(' ')
+  r_name = name_in.downcase.split(' ').reverse.join(' ').chars
 
+  n = r_name.length
+  p r_name
+  #check this might be problematic, maybe ...
+  i = 0
+  while i < n
+      if vowels.include? r_name[i]
+        r_name[i] = vowels[vowels.index(r_name[i])+1]
+        i += 1
+      elsif consonants.include? r_name[i]
+        r_name[i] = consonants[consonants.index(r_name[i])+1]
+        i += 1
+      elsif r_name[i] == "u"
+        r_name[i] = "a"
+      elsif r_name[i] == "z"
+        r_name[i] = "b"
+      else 
+        i += 1
+      end
+  end
+  p r_name
 end
   
-alias_manager("Peter Mueller")
-#DRIVER CODE________________
+alias_manager("PeterU MuellerZ")
