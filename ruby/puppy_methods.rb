@@ -1,3 +1,84 @@
+
+class Puppy
+
+  def initialize
+    puts "Initializing new puppy instance"
+  end
+
+  def fetch(toy)
+    puts "I brought back the #{toy}!"
+    toy
+  end
+
+  def speak(x)
+    x.times do puts "woof"
+    end
+  end
+
+  def roll_over
+    puts "*rolls over*"
+  end
+
+  def dog_years(y)
+    dog_y = y * 7
+    puts "Dog years = #{dog_y} years."
+  end
+end
+  
+
+### Driver Code ------#
+Puppy.new.fetch("ball")
+Puppy.new.speak(7)
+Puppy.new.roll_over
+Puppy.new.dog_years(5
+
+### Release 2 My Own Class ---------#
+
+class Baseball_player
+
+  def pitch
+    y = rand(0..1)
+      if y == 0
+        puts "Ball"
+      else
+        puts "Strike"
+      end
+    end
+
+#1B % = 65% // 2B % = 20% // 3B % = 5% // HR % = 10%
+
+  def hit 
+    y = rand(0..100)
+      if y <= 65
+        puts "1B"
+      elsif y > 66 && y < 85
+        puts "2B"
+      elsif y > 86 && y < 95
+        puts "3B"
+      else
+        puts "HR"
+      end
+  end
+end
+
+
+### DRIVER CODE ------------#
+i = 0
+bball_data = []
+until i == 5
+  bball_data[i] = Baseball_player.new
+  i += 1
+end 
+
+
+bball_data.each do | player |
+  player.hit
+  player.pitch
+  puts " ----_----_----_----_----_"
+end
+
+####NOTE: This was my original submission for 6.2
+
 class Puppy
 
   def fetch(toy)
