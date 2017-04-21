@@ -1,21 +1,25 @@
-Virus Predictor
+#Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself, with: Peter Thompson].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# The require relative statement references other ruby documents which allows the program to pull information from those other documents.
+# The difference between require relative and require is that require relative is used to reference files within the local directory while require must get the exact path for a proper file reference
 require_relative 'state_data'
+
 
 class VirusPredictor
 
+#Initializes the state instances and creates readable variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+#Calls predicted deaths method and speed of spread method and uses the instance variables as the arguments
+#Predicted deaths and speed of spread methods are allowed to be accessible outside of the private scope  
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -23,6 +27,7 @@ class VirusPredictor
 
   private
 
+#Predicts the deaths of the virus based on population density, and then prints the results.
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -41,6 +46,7 @@ class VirusPredictor
 
   end
 
+#Predicts the speed of spread of the virus based on the population density and prints the speed.
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -70,21 +76,13 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
 
 STATE_DATA.each do |state_name, pop_info| 
-  VirusPredictor.new(state_name, pop_info[:population_density], pop_info[:population])
+p VirusPredictor.new(state_name, pop_info[:population_density], pop_info[:population]).virus_effects
 end
+
+
 
 #=======================================================================
 # Reflection Section

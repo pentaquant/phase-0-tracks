@@ -14,29 +14,39 @@
 def alias_manager(name_in)
   vowels = "aeiou"
   consonants = "bcdfghjklmnpqrstvwxyz"
-
+  name_data = {}
+  
   r_name = name_in.downcase.split(' ').reverse.join(' ').chars
 
   n = r_name.length
-  p r_name
   #check this might be problematic, maybe ...
   i = 0
   while i < n
-      if vowels.include? r_name[i]
+      if r_name[i] == "u"
+        r_name[i] = "a"
+      elsif r_name[i] == "z"
+        r_name[i] = "b"
+      elsif vowels.include? r_name[i]
         r_name[i] = vowels[vowels.index(r_name[i])+1]
         i += 1
       elsif consonants.include? r_name[i]
         r_name[i] = consonants[consonants.index(r_name[i])+1]
         i += 1
-      elsif r_name[i] == "u"
-        r_name[i] = "a"
-      elsif r_name[i] == "z"
-        r_name[i] = "b"
       else 
         i += 1
       end
   end
-  p r_name
-end
+
+  upcase_variable = r_name.map { |x| "#{x}" }.join("").split(' ')
   
-alias_manager("PeterU MuellerZ")
+  converted_name = upcase_variable.map { |x| x.capitalize }.join(" ")
+  
+  name_data[name_in.to_sym] = converted_name
+  
+  name_data.each do |name_in, converted_name|
+    puts "\nName Entered: #{name_in} // Name Returned: #{converted_name}."
+  end
+end
+
+alias_manager("Peter Mueller")
+alias_manager("John Doe")
