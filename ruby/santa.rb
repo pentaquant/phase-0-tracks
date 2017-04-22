@@ -7,7 +7,7 @@ class Santa
   def initialize(gender, ethnicity)
     puts "Initializing new Santa instance."
     @gender = gender
-    @ethnicity = ethnicity
+    @ethnicity = ethnicity  
   end
 
   def speak
@@ -18,16 +18,48 @@ class Santa
     puts "That was a good #{cookie_type}"
   end
 
+  def celebrate_birthday
+    age += 1
+  end
+
+  def get_mad_at(bad_reindeer)
+    reindeer_ranking.delete(bad_reindeer)
+    reindeer_ranking.push(bad_reindeer)
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
   def about
     puts "_----_----_----_----_----_"
     puts "Gender: #{@gender}"
     puts "ethnicity: #{@ethnicity}"
   end
 
-10.times do |i|
-santas  << Santa.new(genders[i], ethnicities[i]).about
+
+#For preactice, it would be smart to refactor this part of the code.
+  10.times do |i|
+  santas  << Santa.new(genders[i], ethnicities[i]).about
   end
 end
 # Santa.new.speak
 # Santa.new.eat_milk_and_cookies("Snicker")
 
+# #getter
+# def name
+#   @name
+# end
+
+# #setter
+# def location=(new_location)
+#   @name = new_name 
+# end
