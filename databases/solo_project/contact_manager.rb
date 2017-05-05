@@ -184,3 +184,37 @@ def update_existing_entry(database)
     print_welcome_message(database)
   end
 end
+
+def delete_existing_entry(database)
+  puts "\e[H\e[2J"
+
+  puts "*" * 150
+  puts "DELETING AN EXISTING ENTRY".center(150)
+  puts "*" * 150
+
+  print_database_contents(database)
+
+  puts "\nWhich entry would you like to delete? (enter corresponding number):\n\n"
+  input = gets.chomp.to_i
+
+  database.execute("DELETE FROM contact_list WHERE id = ?", [input])
+
+  puts "\n\nENTRY DELETED SUCCESSFULLY. PRESS ENTER TO CONTINUE..."
+  input = gets.chomp
+
+  if input
+    print_welcome_message(database)
+  end
+end
+
+
+def delete_database(database)
+  database.execute("DROP TABLE IF EXISTS contact_list")
+
+  puts "\n\nALL RECORDS DELETED SUCCESSFULLY. PRESS ENTER TO CONTINUE..."
+  input = gets.chomp
+
+  if input
+    begin_program
+  end
+end
