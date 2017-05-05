@@ -68,3 +68,18 @@ def add_new_entry(database)
     print_welcome_message(database)
   end
 end
+
+def print_database_contents(database)
+  contacts = database.execute("SELECT * FROM contact_list")
+
+  puts "-" * 150
+  print " ".ljust(10), "Name".ljust(25), "Birthday".ljust(20), "Phone Number".ljust(20), "Email".ljust(45), "Date Added\n"
+  puts "-" * 150
+
+  contacts.each do |contact|
+    print (contact['id'].to_s+".").ljust(10), (contact['first_name']+" "+contact['last_name']).ljust(25), contact['birthday'].to_s.ljust(20), contact['phone_number'].to_s.ljust(20), contact['email'].ljust(45), contact['date_added'], "\n"
+  end
+
+  puts "-" * 150
+end
+
