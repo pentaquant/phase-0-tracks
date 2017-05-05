@@ -40,3 +40,31 @@ def print_welcome_message(database)
     abort
   end
 end
+
+def add_new_entry(database)
+  puts "\e[H\e[2J"
+  puts "*" * 150
+  puts "ADDING A NEW ENTRY TO YOUR CONTACT LIST".center(150)
+  puts "*" * 150
+
+  puts "\nEnter First Name:"
+  first_name = gets.chomp
+  puts "Enter Last Name:"
+  last_name = gets.chomp
+  puts "Enter Birthdate (MM/DD/YYYY):"
+  birthday = gets.chomp
+  puts "Enter Phone Number (XXX-XXX-XXXX):"
+  phone_number = gets.chomp
+  puts "Enter Email:"
+  email = gets.chomp
+  date_added = Time.now.strftime("%m/%d/%Y")
+
+  database.execute("INSERT INTO contact_list (first_name, last_name, birthday, phone_number, email, date_added) VALUES (?, ?, ?, ?, ?, ?)", [first_name, last_name, birthday, phone_number, email, date_added])
+
+  puts "\n\nENTRY ADDED SUCCESSFULLY. PRESS ENTER TO CONTINUE..."
+  input = gets.chomp
+
+  if input
+    print_welcome_message(database)
+  end
+end
