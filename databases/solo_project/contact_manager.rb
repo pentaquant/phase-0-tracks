@@ -83,3 +83,104 @@ def print_database_contents(database)
   puts "-" * 150
 end
 
+def update_existing_entry(database)
+  puts "\e[H\e[2J"
+  puts "*" * 150
+  puts "UPDATING AN EXISTING ENTRY".center(150)
+  puts "*" * 150
+
+  print_database_contents(database)
+
+  puts "\nWhich entry would you like to update? (enter corresponding number):\n\n"
+  input = gets.chomp.to_i
+
+  contacts = database.execute("SELECT * FROM contact_list WHERE id = ?", [input])
+
+  puts "\e[H\e[2J"
+
+  puts "*" * 150
+  puts "UPDATING SELECTED ENTRY".center(150)
+  puts "*" * 150
+
+  puts "-" * 150
+  print " ".ljust(10), "Name".ljust(25), "Birthday".ljust(20), "Phone Number".ljust(20), "Email".ljust(45), "Date Added\n"
+  puts "-" * 150
+
+  contacts.each do |contact|
+    print (contact['id'].to_s+".").ljust(10), (contact['first_name']+" "+contact['last_name']).ljust(25), contact['birthday'].to_s.ljust(20), contact['phone_number'].to_s.ljust(20), contact['email'].ljust(45), contact['date_added'], "\n"
+  end
+
+  puts "-" * 150
+
+  puts "\nEnter New First Name:"
+  first_name = gets.chomp
+  puts "Enter New Last Name:"
+  last_name = gets.chomp
+  puts "Enter New Birthdate (MM/DD/YYYY):"
+  birthday = gets.chomp
+  puts "Enter New Phone Number (XXX-XXX-XXXX):"
+  phone_number = gets.chomp
+  puts "Enter New Email:"
+  email = gets.chomp
+  date_added = Time.now.strftime("%m/%d/%Y")
+
+  database.execute("UPDATE contact_list SET first_name = ?, last_name = ?, birthday = ?, phone_number = ?, email = ?, date_added = ? WHERE id = ?", [first_name, last_name, birthday, phone_number, email, date_added, input])
+
+  puts "\n\nENTRY UPDATED SUCCESSFULLY. PRESS ENTER TO CONTINUE..."
+  user_input = gets.chomp
+
+  if user_input
+    print_welcome_message(database)
+  end
+end
+
+def update_existing_entry(database)
+  puts "\e[H\e[2J"
+  puts "*" * 150
+  puts "UPDATING AN EXISTING ENTRY".center(150)
+  puts "*" * 150
+
+  print_database_contents(database)
+
+  puts "\nWhich entry would you like to update? (enter corresponding number):\n\n"
+  input = gets.chomp.to_i
+
+  contacts = database.execute("SELECT * FROM contact_list WHERE id = ?", [input])
+
+  puts "\e[H\e[2J"
+
+  puts "*" * 150
+  puts "UPDATING SELECTED ENTRY".center(150)
+  puts "*" * 150
+
+  puts "-" * 150
+  print " ".ljust(10), "Name".ljust(25), "Birthday".ljust(20), "Phone Number".ljust(20), "Email".ljust(45), "Date Added\n"
+  puts "-" * 150
+
+  contacts.each do |contact|
+    print (contact['id'].to_s+".").ljust(10), (contact['first_name']+" "+contact['last_name']).ljust(25), contact['birthday'].to_s.ljust(20), contact['phone_number'].to_s.ljust(20), contact['email'].ljust(45), contact['date_added'], "\n"
+  end
+
+  puts "-" * 150
+
+  puts "\nEnter New First Name:"
+  first_name = gets.chomp
+  puts "Enter New Last Name:"
+  last_name = gets.chomp
+  puts "Enter New Birthdate (MM/DD/YYYY):"
+  birthday = gets.chomp
+  puts "Enter New Phone Number (XXX-XXX-XXXX):"
+  phone_number = gets.chomp
+  puts "Enter New Email:"
+  email = gets.chomp
+  date_added = Time.now.strftime("%m/%d/%Y")
+
+  database.execute("UPDATE contact_list SET first_name = ?, last_name = ?, birthday = ?, phone_number = ?, email = ?, date_added = ? WHERE id = ?", [first_name, last_name, birthday, phone_number, email, date_added, input])
+
+  puts "\n\nENTRY UPDATED SUCCESSFULLY. PRESS ENTER TO CONTINUE..."
+  user_input = gets.chomp
+
+  if user_input
+    print_welcome_message(database)
+  end
+end
