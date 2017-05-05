@@ -1,0 +1,57 @@
+1. SELECT * FROM Employees
+Output:
+Aaron|12/01/1952|555-555-5555|4
+Bob|01/28/1984|401-555-5555|1
+Carter|06/07/1992|747-555-1010|5
+Dom|06/07/1992|222-555-8888|5
+Eric|01/01/1970|111-222-3333|2
+Falcon|02/01/2002|454-658-2456|3
+Gerald|06/06/1981|897-342-3635|2
+
+2. UPDATE Employees SET name="Aaron C." WHERE phone_number="555-555-5555";
+OUTPUT:
+Aaron C.|12/01/1952|555-555-5555|4
+Bob|01/28/1984|401-555-5555|1
+Carter|06/07/1992|747-555-1010|5
+Dom|06/07/1992|222-555-8888|5
+Eric|01/01/1970|111-222-3333|2
+Falcon|02/01/2002|454-658-2456|3
+Gerald|06/06/1981|897-342-3635|2
+
+3. SELECT * FROM Employees, Department WHERE Employees.department_id = Department.id;
+OUTPUT:
+Aaron C.|12/01/1952|555-555-5555|4|4|Marketing
+Bob|01/28/1984|401-555-5555|1|1|Finance
+Carter|06/07/1992|747-555-1010|5|5|User Acquisition
+Dom|06/07/1992|222-555-8888|5|5|User Acquisition
+Eric|01/01/1970|111-222-3333|2|2|Business Development
+Falcon|02/01/2002|454-658-2456|3|3|Engineering
+Gerald|06/06/1981|897-342-3635|2|2|Business Development
+
+4a. SELECT Employees.name, Department.name FROM Employees, Department WHERE Employees.department_id = Department.id;
+OUTPUT:
+Aaron C.|Marketing
+Bob|Finance
+Carter|User Acquisition
+Dom|User Acquisition
+Eric|Business Development
+Falcon|Engineering
+Gerald|Business Development
+
+4b. SELECT Employees.name, Department.name FROM Employees JOIN Department ON Employees.department_id = Department.id;
+OUTPUT:
+Aaron C.|Marketing
+Bob|Finance
+Carter|User Acquisition
+Dom|User Acquisition
+Eric|Business Development
+Falcon|Engineering
+Gerald|Business Development
+
+5. DELETE FROM Employees WHERE department_id = 5;
+OUTPUT:
+Aaron C.|12/01/1952|555-555-5555|4
+Bob|01/28/1984|401-555-5555|1
+Eric|01/01/1970|111-222-3333|2
+Falcon|02/01/2002|454-658-2456|3
+Gerald|06/06/1981|897-342-3635|2

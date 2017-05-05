@@ -423,7 +423,7 @@ end
 def begin_program
   puts "\e[H\e[2J"
 
-  database = SQLite3::Database.new("contacts.db")
+  database = SQLite3::Database.nsublew("contacts.db")
   database.results_as_hash = true
 
   create_table_cmd = <<-SQL
