@@ -418,3 +418,30 @@ def generate_fake_data(database)
     print_welcome_message(database)
   end
 end
+
+
+def begin_program
+  puts "\e[H\e[2J"
+
+  database = SQLite3::Database.new("contacts.db")
+  database.results_as_hash = true
+
+  create_table_cmd = <<-SQL
+    CREATE TABLE IF NOT EXISTS contact_list (
+    id INTEGER PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    birthday DATE,
+    phone_number TEXT,
+    email TEXT,
+    date_added TEXT
+    )
+  SQL
+
+  database.execute(create_table_cmd)
+
+  print_welcome_message(database)
+end
+
+begin_program
+
