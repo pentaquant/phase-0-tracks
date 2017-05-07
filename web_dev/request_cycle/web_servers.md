@@ -1,0 +1,3 @@
+What is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
+A VPS is virtual machine sold as a service by an Internet hosting service.
+A VPS runs its own copy of an operating system, and customers may have superuser-level access to that operating system instance, so they can install almost any software that runs on that OS. For many purposes they are functionally equivalent to a dedicated physical server, and being software-defined, are able to be much more easily created and configured. They are priced much lower than an equivalent physical server. However, as they share the underlying physical hardware with other VPSs, performance may be lower, depending on the workload of any other executing virtual machines.
